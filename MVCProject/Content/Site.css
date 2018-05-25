@@ -1,0 +1,85 @@
+﻿body {
+    
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+    .k-grid td {
+    text-align: center!important;
+}
+    .k-grid-header .k-header {
+    text-align: center!important;
+}
+    #grid .k-grid-header .k-header {
+    text-align: center;
+    font-family: 'proxima_nova_rgregular', 'proxima_novalight', "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif !important;
+    color: #fff !important;
+    /*background: #909090;*/
+    padding-left: .0em;
+}
+
+    #grid .k-grid-header .k-header a{
+    background: #909090;
+}
+    
+    .labelDropDown{
+        padding: 20px;
+    }
+
+    .labelDropDown h2{
+        display:inline;
+    }
+
+    .border{
+        margin-top:20px;
+        border:1px solid #f2f2f2;
+        border-radius: 6px;
+        box-shadow:-2px 4px 19px 0px #888888;
+    }
+
+    .k-grid-header th.k-header>.k-link{
+        color:#fff!important;
+    }
+
+        .labelHeader{
+        color:gray;
+        font-size:24px;
+        margin-bottom:0;
+    }
+    .formContainer{
+        margin-top:15px;
+    }
+    .formContainer h2{
+        padding-left:14px;
+    }
+
+    .border .form-group{
+        margin-top:10px;
+    }
+
+    button{
+        margin-top:5px;
+    }
+
+    .pageHeader{
+        color:gray;font-size:26px!important;
+    }

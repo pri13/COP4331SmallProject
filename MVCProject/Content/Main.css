@@ -1,0 +1,112 @@
+﻿
+         .ui[class*="top fixed"].menu {
+            background-color: #6a6a6a;
+            height: 40px !important;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            min-height: 40px !important;
+        }
+
+        .ui.sidebar {
+            overflow: visible !important;
+        }
+
+        .self .item:before {
+            background: none !important;
+        }
+
+        .ui.dropdown {
+            color: #696969 !important;
+            text-shadow: none !important;
+        }
+
+        .ui.menu .dropdown.item .menu {
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            font-size: 16px;
+            text-shadow: none !important;
+        }
+
+        .ui.menu .ui.dropdown .menu > .item {
+            top: -1px;
+            font-size: 16px;
+            text-shadow: none !important;
+        }
+
+
+        .ui.dropdown .menu > .menuheader {
+            margin: 1rem 0 .75rem;
+            padding: 0 1.14285714rem;
+            color: rgba(0,0,0,.85);
+            font-size: .78571429em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .k-header {
+            color: #7bb359 !important;
+        }
+
+        .k-grid-header .k-header {
+            color: #7bb359 !important;
+        }
+
+        .k-link {
+            color: #7bb359 !important;
+        }
+
+        .k-pager-wrap {
+            padding-top: 10px !important;
+        }
+
+        .k-state-selected {
+            background-color: #7bb359 !important;
+            border: 0px;
+            color: #fff !important;
+        }
+
+        .k-grouping-header {
+            display: none;
+        }
+
+        .k-pager-info {
+            color: #7bb359 !important;
+        }
+
+        #btnReportVisibility {
+            color: #7bb359 !important;
+        }
+
+        select.ui.dropdown.nextActionDDLFU {
+            color: rgb(149,149,149);
+        }
+
+        .k-button:hover, .k-button.k-state-hover {
+            color: #fff;
+            border-color: #bfbfbf;
+            background-color: #7bb359;
+        }
+
+        input[type="submit"], input[type="button"], button {
+            background-color: #fff;
+        }
+
+        a.k-icon {
+            width: 10px;
+        }
+
+        .demo.sidebar.overlay.visible {
+            z-index: 9999 !important;
+        }
+
+        .ui.dropdown .menu > .item .dropdown.icon {
+            width: auto;
+            margin: 0;
+            padding: 3px 0;
+            float: right;
+            right: 10px;
+        }
+
+        .ui.menu .ui.dropdown.item .menu .item:not(.filtered) {
+            padding: 0 !important;
+        }

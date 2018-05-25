@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css?v=2"> 
+    @Styles.Render("~/Content/css")
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+   <link rel="stylesheet" href="/Content/Semantic/semantic.min.css" />
+    @Scripts.Render("~/bundles/modernizr")
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card" style="width:400px">
+                <div class="card-body">
+                    <div id="TitleDiv" style="text-align:center;">
+                        <h4 class="card-title">Remote Utility</h4>
+                        <hr>
+                    </div>
+                    <div style="text-align:center">
+                        <img class="card-img-bottom" src="~/Img/Remote.png" alt="Card image" style="max-width:100px; max-height:100px;">
+                    </div>
+                    <div style="text-align:center">
+                        <p class="card-text">Move your shades Up & Down</p>
+                        <a href="@Url.Action("RemoteUtility","RemoteUtility")" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width:400px">
+                <div class="card-body">
+                    <div style="text-align:center">
+                        <h4 class="card-title">LED Lighting</h4>
+                        <hr>
+                    </div>
+                    <div style="text-align:center">
+                        <img class="card-img-bottom" src="~/Img/Light Bulb.jpg" alt="Card image" style=" max-width:100px; max-height:100px;">
+                    </div>
+                    <div style="text-align:center">
+                        <p class="card-text">Modify your LED Settings (Set Brightness, LED Color)</p>
+                        <a href="@Url.Action("LEDView", "LEDSetter")" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="card" style="width:400px;">
+                <div class="card-body">
+                    <div style="text-align:center">
+                        <h4 class="card-title">Battery Status</h4>
+                        <hr>
+                    </div>
+                    <div style="text-align:center">
+                        <img class="card-img-bottom" src="~/Img/Battery.png" alt="Card image" style="max-width:100px; max-height:100px;">
+                    </div>
+                    <div style="text-align:center">
+                        <p class="card-text">View the current battery percentage</p>
+                        <a href="@Url.Action("BatteryView", "Battery")" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="card" style="width:400px;">
+                <div class="card-body">
+                    <div style="text-align:center">
+                        <h4 class="card-title">Automation and Settings</h4>
+                        <hr>
+                    </div>
+                    <div style="text-align:center">
+                        <img class="card-img-bottom" src="~/Img/settings.jpg" alt="Card image" style="max-width:100px; max-height:100px;">
+                    </div>
+                    <div style="text-align:center">
+                        <p class="card-text">Manage automation settings</p>
+                        <a href="@Url.Action("SettingsView", "Settings")" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    .card{
+        margin-right:10px;
+        margin-bottom:20px;
+    }
+    .container {
+        float: none !important;
+        margin-top: 5%;
+        /*margin-left: 15%;*/
+        padding-left:10%;
+    }
+</style>

@@ -1,0 +1,358 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon"
+          href="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_90,w_90/v1493056987/ovagkblnsytx6gb8zxue.jpg"
+          type="image/x-icon" />
+    <title>Blinds&trade;</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css?v=2">
+    <script src="/js/modernizr.js"></script>
+    <link rel="stylesheet" href="/Content/Semantic/semantic.min.css" />
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"
+            integrity="sha256-oTyWrNiP6Qftu4vs2g0RPCKr3g1a6QTlITNgoebxRc4="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+          crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/Content/Main.css" />
+</head>
+<body>
+    <h1 style="text-align:center;color:black;">LED Lighting</h1>
+    <br>
+    <div>
+        <button type="button" class="btn btn-info" onclick="GoBackToDashBoard()">Go Back to Dashboard</button>
+    </div>
+    <div class="container"  style="background:green; border:1px black; border-radius:5px; color:#fff; text-align:center;">
+        <p id="MessageBox"></p>
+        <br/>
+    </div>
+    <div class="container" align="center">
+        <button id="power" value="Off" type="button" onclick="toggle(this)" class="btn btn-danger btn-circle btn-xl" 
+                style="text-align:center;"><img src="~/Img/powerbutton.png" />
+        </button>
+        <h1 style="color:#ffff; font-size:1.5rem">Select Brightness Level</h1>
+        <p class="text-warning" style="font-size:50px;"><span id="demo"></span>%</p>
+        <div class="slidecontainer">
+            <input type="range" step="20" max="100" value="50" class="slider" id="myRange">
+        </div>
+        <div style="border:1px solid #ffff; border-radius:5px; margin:8px;">
+            <h1 style="color:#ffff; font-size:1.5rem">Select a Color</h1>
+            <button id="red" class="ui red button" value="Red" onclick="setColor(this)">Red</button>
+            <button class="ui orange button" value="Orange" onclick="setColor(this)">Orange</button>
+            <button class="ui yellow button" value="Yellow" onclick="setColor(this)">Yellow</button>
+            <button class="ui olive button" value="Olive" onclick="setColor(this)">Olive</button>
+            <button id="green" class="ui green button" value="Green" onclick="setColor(this)">Green</button>
+            <button class="ui teal button" value="Teal" onclick="setColor(this)">Teal</button>
+            <button class="ui lblue button" value="LightBlue" onclick="setColor(this)">Light Blue</button>
+            <button class="ui sblue button" value="SoftBlue" onclick="setColor(this)">Soft Blue</button>
+            <button class="ui blue button" value="Blue" onclick="setColor(this)">Blue</button>
+            <button class="ui violet button" value="Violet" onclick="setColor(this)">Violet</button>
+            <button class="ui purple button" value="Purple" onclick="setColor(this)">Purple</button>
+            <button class="ui pink button" value="Pink" onclick="setColor(this)">Pink</button>
+         
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    .ui.red.button {
+        background-color: #FF0000;
+        color: #fff;
+    }
+
+    .ui.orange.button {
+        background-color: #FF8000;
+        color: #fff;
+    }
+
+    .ui.yellow.button {
+        background-color: #FBBD08!important;
+        color: #fff;
+    }
+
+    .ui.olive.button {
+        background-color: #80FF00;
+        color: #fff;
+    }
+
+    .ui.green.button {
+        background-color: #00FF00;
+        color: #fff;
+    }
+    .ui.teal.button{
+        background-color:#00FF80;
+        color:#fff;
+    }
+    .ui.lblue.button {
+        background-color: #00FFFF;
+        color: #fff;
+    }
+    .ui.sblue.button {
+        background-color: #0080FF;
+        color: #fff;
+    }
+    .ui.blue.button {
+        background-color: #0000FF;
+        color: #fff;
+    }
+    .ui.violet.button {
+        background-color: #7F00FF;
+        color: #fff;
+    }
+    .ui.purple.button {
+        background-color: #FF00FF;
+        color: #fff;
+    }
+    .ui.pink.button {
+        background-color: #FF007F;
+        color: #fff;
+    }
+    /*.ui.list > a.item {
+        cursor: pointer;
+        color: #1CB084;
+        /*  color: #41C49C;*/
+        /*    color: #7CEAD9;*/
+    }*/
+
+        /*.ui.list > a.item:hover {
+            color: #2F8C70;
+        }*/
+
+    .ui.button {
+        margin: 5px;
+    }
+
+    .slidecontainer {
+        width: 100%;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 25px;
+        background: #6666;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .slider :: -moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+    .slide-control-group {
+        margin: 20px 0;
+    }
+
+    .slide-control {
+        width: 315px;
+        height: 15px;
+        position: relative;
+        border: 1px solid #d6d6d6;
+        background: #ffffff;
+        display: block;
+        overflow: visible;
+    }
+
+    .slide-control-button {
+        position: absolute;
+        z-index: 2;
+        width: 28px;
+        height: 29px;
+        left: 0;
+        margin-left: -14px;
+        top: -7px;
+        bottom: -34px;
+        background: #eee;
+    }
+
+    .btn-info {
+        color: #fff;
+        margin: 15px;
+        background-color: #5bc0de;
+        border-color: #5bc0de;
+    }
+
+    .container {
+        width: 500px;
+        max-width: 100%;
+        background: #222;
+        border: 1px solid silver;
+        border-radius: 5px;
+    }
+
+    .btn-circle {
+        cursor: pointer;
+        min-height: 30px;
+        position: relative;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 4px 8px;
+        margin-left: 20px;
+        font: 12pt Calibri bold;
+        font-variant: small-caps;
+        color: #fff;
+        text-shadow: 0 0 0;
+        outline: 0;
+        letter-spacing: 2px;
+        text-shadow: 0 1px 4px #111;
+        /*box-shadow*/
+        box-shadow: 0 1px 4px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.2), inset 0 -1px 1px rgba(255,255,255,.1);
+        /*linear-gradient*/
+        background: linear-gradient(#333,#666);
+        padding: 10px 16px;
+        margin: 50px;
+        font-size: 15px;
+        line-height: 1;
+        border-radius: 6px;
+        width: 100px;
+        height: 200px;
+    }
+
+        .btn-circle.btn-xl {
+            width: 100px;
+            height: 100px;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-size: 24px;
+            line-height: 1.33;
+        }
+</style>
+<script>
+    var val = null;
+    //$(document).on('input', '#myRange', function () {
+    //    val = $(this).val();
+    //    setBrightness(val);
+    //});
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function () {
+        output.innerHTML = this.value;
+        console.log(output.innerHTML);
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("GetBrightnessLevel", "LEDSetter")",
+            dataType: "Json",
+        async: true,
+        data: JSON.stringify({ level: output.innerHTML }),
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            Success = true;//doesnt goes here
+        },
+        error: function (textStatus, errorThrown) {
+            Success = false;//doesnt goes here
+        }
+
+    });
+    }
+    function GoBackToDashBoard() {
+        window.location.href = "/DashBoard/DashBoard";
+    }
+    function ajaxCall(a) {
+       
+        var responseText = '';
+          var call = $.ajax({
+            type: "POST",
+              url: "@Url.Action("SendColor", "LEDSetter")",
+              async: false,
+            dataType: "Json",   
+            data: JSON.stringify({ color: a.value }),
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                responseText = response;
+            },
+            error: function (textStatus, errorThrown) {
+               
+            }
+
+        });
+        return responseText;
+        
+    }
+    function setColor(a) {
+        var response = ajaxCall(a);
+        if (response != null) {
+            document.getElementById("MessageBox").innerHTML = response.toString();
+            document.getElementById("power").value = "On";
+        }
+    }
+    function toggle(button) {
+      
+        var value = document.getElementById("power").value;
+        if (value == "Off") {
+            value = "On";
+            $.ajax({
+            type: "POST",
+            url: "@Url.Action("SendONOFFSignal", "LEDSetter")",
+            dataType: "Json",
+            async: true,
+            data: JSON.stringify({ status: value }),
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                Success = true;//doesnt goes here
+            },
+            error: function (textStatus, errorThrown) {
+                Success = false;//doesnt goes here
+            }
+            });
+            document.getElementById("power").value = "On";
+        }
+
+        else if (value == "On") {
+            value = "Off";
+            $.ajax({
+            type: "POST",
+            url: "@Url.Action("SendONOFFSignal", "LEDSetter")",
+            dataType: "Json",
+            async: true,
+            data: JSON.stringify({status: value }),
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                Success = true;//doesnt goes here
+            },
+            error: function (textStatus, errorThrown) {
+                Success = false;//doesnt goes here
+            }
+
+            });
+            document.getElementById("power").value = "Off";
+        }
+    }
+</script>

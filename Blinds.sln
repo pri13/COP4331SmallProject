@@ -1,8 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomateBlinds", "MVCProject\AutomateBlinds.csproj", "{17848204-FA72-45BA-913B-7B46BB9AD444}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager", "ContactManager\ContactManager.csproj", "{17848204-FA72-45BA-913B-7B46BB9AD444}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

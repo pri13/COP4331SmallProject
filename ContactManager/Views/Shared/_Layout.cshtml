@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="~/Img/UCF-logo.png" type="image/x-icon" />
+    <title>Contact Manager!&trade;</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css?v=2">
+    <script src="/js/modernizr.js"></script>
+    <link rel="stylesheet" href="/Content/Semantic/semantic.min.css" />
+    @*<script src="/Scripts/jquery-1.10.2.min.js"></script>*@
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    @*<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"
+        integrity="sha256-EgPuQS+2I8bm2u3b3r1dJUEiO56a/xeZGXiTnNTvYZM="
+        crossorigin="anonymous"></script>*@
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="/Content/bootstrap-formhelpers.min.css"></script>
+    <script src="~/js/jquery-2.0.0.min.js"></script>
+    <script src="~/js/jquery.smartWizard.js"></script>
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/Content/Main.css" />
+</head>
+<body>
+    <style>
+        .ui.left.sidebar, .ui.right.sidebar {
+            width: 230px!important;
+            background:#ffff;
+        }
+        .nav > li > a:hover {
+            background-color: #7DAB54 !important;
+        }
+        .logo {
+            background: url(../../Img/1.png) no-repeat 0 0;
+            background-size: 30px;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        #dashboardButtons {
+            text-align: center;
+            color: #ffff !important;
+            height: 40px;
+            width: 190px !important;
+            background-color: #5bc0de;
+        }
+    </style>
+    <div class="ui top fixed menu hgMenuHolder" style="background-color:#007bff;height:50px!important;">
+        <a class="ui item" href="/Home/Index" style="color:#fff !important;font-family:proxima_nova_rgregular; font-size:16px;">
+            <i class="logo"></i>
+            <span></span>
+        </a>
+        <a class="browse item dropdown menu" id="toggleMenuButton" style="color:#fff;font-size:12px">
+            <i class="sidebar icon" style="font-size:16px;"></i>
+            MENU
+        </a>
+    </div>
+    <div style="height:50px!important; padding:10px;">
+        <div class="ui sidebar" style="color: black">
+            @*<img class="ui image" style="width: 24px; margin-right: 10px;" />*@
+            <span style="font-size:20px!important;"></span>
+            <div class="ui vertical menu">
+
+                <div class="subNavigate item">
+                    <button id="dashboardButtons" class="NavIcon ui simple dropdown" onclick="location.href='@Url.Action("Index", "Home")'">
+                        <i class="fa fa-edit"></i>
+                       Contacts Builder
+                    </button>
+                </div>
+               
+
+            </div>
+        </div>
+    </div> 
+
+    <div class="apusher">
+        <div>
+            <div class="body-content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="/Content/Semantic/semantic.min.js"></script>
+    <script type="text/javascript">
+        $('#toggleMenuButton').click(function () {
+            sidebarMenuNav.sidebar("toggle");
+        });
+        var sidebarMenuNav = null;
+        $(document).ready(function () {
+            sidebarMenuNav = $('.ui.sidebar')
+                .sidebar({
+                    context: '.apusher',
+                    onHide: function () {
+                        console.log('hide');
+                    },
+                    onShow: function () {
+                        console.log('show');
+                    }
+                })
+                .sidebar('setting', {
+                    dimPage: false,
+                    transition: 'overlay'
+                });
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+    <script src="/Content/bootstrap-formhelpers.min.css"></script>
+    
+</body>
+</html>

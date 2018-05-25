@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ContactManager.Models.ContactViewModel>
+<link href="~/Content/fontawesome-all.css" rel="stylesheet" />
+@{
+                /**/
+
+                ViewBag.Title = "Home Page";
+                int counter = 0;
+}
+   <div class="row">
+@foreach (var item in Model)
+{
+    if (counter != 0 && counter % 3 == 0)
+    {
+        @:</div>
+        @:<div class="row">
+    }
+
+           
+                  <div class="col-md-4 ">
+                      <div class="card" style="width:400px;display:inline-block;">
+                          <div class="card-body">
+                              <div class="card-title">
+
+                                  <h2 id="name" class="text-center"><span class="fas fa-user-tie" />   @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+                               
+                                  </h2>
+
+                                  <hr>
+                              </div>
+                              <div>
+                                  <p>
+                                      @Html.DisplayFor(modelItem => item.Address)
+                                   
+                                  </p>
+                              </div>
+                              <div>
+                                  <p>
+                                      @Html.DisplayFor(modelItem => item.City)
+                                      @Html.DisplayFor(modelItem => item.State)
+                                      @Html.DisplayFor(modelItem => item.Country)
+                                  </p>
+                              </div>
+                              <div>
+                                  <p>
+                                      <span>Cell Phone Number:</span>
+                                      @Html.DisplayFor(modelItem => item.WorkPhone)
+                                  </p>
+                              </div>
+                              <div>
+                                  <p>
+                                      <span>E-Mail:</span>
+                                      @Html.DisplayFor(modelItem => item.Email)
+                                  </p>
+                              </div>
+                              <hr />
+                              <div class="text-center">
+                                  <button class="btn-outline-primary">
+                                      <span class="fas fa-edit" /> Edit this Contact
+                                  </button>
+                                  <button class="btn-outline-primary"><i class="fas fa-trash-alt"></i> Delete this Contact</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  counter++;
+                  }
+              </div>
+
+<style>
+    .card {
+        /*//margin-left: 50%;*/
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-right: 20px;
+    }
+    #name {
+        color: #007bff;
+    }
+</style>

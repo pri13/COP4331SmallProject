@@ -7,6 +7,8 @@ namespace ContactManager.Models
 {
     public class ContactViewModel
     {
+        public int ID { get; set; }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string WorkPhone { get; set; }
@@ -21,4 +23,14 @@ namespace ContactManager.Models
         public string ZipCode { get; set; }
 
     }
+
+
+    public class ContactID
+    {
+        public int contactID { get; set; }
+
+
+    }
+
+
 }

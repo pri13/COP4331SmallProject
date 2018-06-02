@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<ContactManager.Models.ContactViewModel>
-<link href="~/Content/fontawesome-all.css" rel="stylesheet" />
+<div id="ajaxTest">
+    <link href="~/Content/fontawesome-all.css" rel="stylesheet" />
 @{
                 /**/
 
@@ -20,6 +21,7 @@
                       <div class="card" style="width:400px;display:inline-block;">
                           <div class="card-body">
                               <div class="card-title">
+                                  @*<input type="hidden" id="contactID" value="@item.ID" />*@
 
                                   <h2 id="name" class="text-center"><span class="fas fa-user-tie" />   @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
                                
@@ -54,10 +56,10 @@
                               </div>
                               <hr />
                               <div class="text-center">
-                                  <button class="btn-outline-primary">
+                                  <button id="editButton" onclick="EditContactModalClick(@item.ID)" class="btn-outline-primary">
                                       <span class="fas fa-edit" /> Edit this Contact
                                   </button>
-                                  <button class="btn-outline-primary"><i class="fas fa-trash-alt"></i> Delete this Contact</button>
+                                  <button id="deleteButton" onclick="DeleteContactModalClick(@item.ID)" class="btn-outline-primary"><i class="fas fa-trash-alt"></i> Delete this Contact</button>
                               </div>
                           </div>
                       </div>
@@ -78,3 +80,9 @@
         color: #007bff;
     }
 </style>
+
+
+
+</div>
+
+

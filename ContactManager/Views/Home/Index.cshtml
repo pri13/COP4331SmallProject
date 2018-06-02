@@ -26,7 +26,7 @@
 </body>
 </html>
 <script>
-    debugger;
+    //debugger;
 
     var modal = document.getElementById('myModal');
     modal.style.display = "none";
@@ -43,7 +43,7 @@
         userId = 0;
         firstName = "";
         lastName = "";
-        debugger;
+        //debugger;
         var username = document.getElementById("Username").value;;
         var password = document.getElementById("password").value;
         document.getElementById("loginResult").innerHTML = "";
@@ -71,13 +71,13 @@
         }
         catch (err) {
             document.getElementById("loginResult").innerHTML = err.message;
-            
+
         }
     }
 </script>
 <style>
-    #loginResult{
-        text-align:center!important;
+    #loginResult {
+        text-align: center !important;
     }
     /* The Modal (background) */
     .modal {
@@ -116,5 +116,4 @@
             text-decoration: none;
             cursor: pointer;
         }
-
 </style>

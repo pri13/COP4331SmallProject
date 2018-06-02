@@ -74,7 +74,7 @@
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="COP4331Entities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="COP4331Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="People" EntityType="Self.Person" />
           <EntitySet Name="Users" EntityType="Self.User" />
         </EntityContainer>
@@ -83,7 +83,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="COP4331ModelStoreContainer" CdmEntityContainer="COP4331Entities1">
+        <EntityContainerMapping StorageEntityContainer="COP4331ModelStoreContainer" CdmEntityContainer="COP4331Entities">
           <EntitySetMapping Name="People">
             <EntityTypeMapping TypeName="COP4331Model.Person">
               <MappingFragment StoreEntitySet="Person">

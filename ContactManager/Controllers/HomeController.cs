@@ -1,6 +1,8 @@
 ﻿
 using ContactManager.Models;
 using ContactManager.Repository;
+using ContactManager.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,37 @@ namespace ContactManager.Controllers
            
             return View();
            
+        }
+        public ActionResult ContactsManager()
+        {
+
+            return View();
+
+        }
+        [HttpPost]
+        public ActionResult LogOff()
+        {
+            return View();
+        }
+        public ActionResult Error()
+        {
+
+            return View();
+
+        }
+        public void Login(string username, string password)
+        {
+            Login login = new Login();
+             var response =login.GetAccess(username, password);
+             SendResultInfoAsJson(response);
+           
+        }
+        void SendResultInfoAsJson(LoginResponse res)
+        {
+            string strJson = JsonConvert.SerializeObject(res);
+            Response.ContentType = "application/json; charset=utf-8";
+            Response.Write(strJson);
+            Response.End();
         }
         public PartialViewResult ShowContact()
         {

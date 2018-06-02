@@ -197,11 +197,14 @@
     <Content Include="Content\util.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\Login.css" />
     <Content Include="css\reset.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Img\1.png" />
+    <Content Include="Img\contactmanager.png" />
     <Content Include="Img\UCF-logo.png" />
+    <Content Include="Img\WorldMap.png" />
     <Content Include="js\jquery-2.0.0.min.js" />
     <Content Include="js\jquery.smartWizard.js" />
     <Content Include="js\jquery.smartWizard.min.js" />
@@ -292,9 +295,10 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\ContactsManager.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -319,6 +323,7 @@
     <Content Include="webfonts\fa-brands-400.ttf" />
     <Content Include="webfonts\fa-brands-400.eot" />
     <Content Include="Views\Home\ShowContact.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\bootstrap.css.map" />

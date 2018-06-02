@@ -35,7 +35,7 @@
             background-color: #7DAB54 !important;
         }
         .logo {
-            background: url(../../Img/1.png) no-repeat 0 0;
+            background: url(../../Img/contactmanager.png) no-repeat 0 0;
             background-size: 30px;
             width: 40px;
             height: 40px;
@@ -55,10 +55,9 @@
             <i class="logo"></i>
             <span></span>
         </a>
-        <a class="browse item dropdown menu" id="toggleMenuButton" style="color:#fff;font-size:12px">
-            <i class="sidebar icon" style="font-size:16px;"></i>
-            MENU
-        </a>
+        <div class="browse item dropdown menu" id="login" style="font-size:14px!important;right:-90%;">
+            @Html.Partial("_loginPartial")
+        </div>
     </div>
     <div style="height:50px!important; padding:10px;">
         <div class="ui sidebar" style="color: black">

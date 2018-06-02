@@ -119,13 +119,38 @@ namespace ContactManager.Controllers
 
         }
 
-        public ActionResult EditContact(ContactViewModel model)
+        public ActionResult EditContact(string editContactJson)
         {
+            EditContactTest contactObject = Newtonsoft.Json.JsonConvert.DeserializeObject<EditContactTest>(editContactJson);
+            int selectedId = contactObject.contactID;
+            var result = new List<Models.ContactViewModel>();
+
+            Person contact = null;
+            foreach (var person in context.People)
+            {
+                if (person.ID == selectedId)
+                {
+                    contact = person;
+
+                    person.FirstName = contactObject.FirstName;
+                    person.LastName = contactObject.LastName;
+                    person.WorkPhone = contactObject.WorkPhone;
+                    person.CellPhone = contactObject.CellPhone;
+                    person.StreetAddress = contactObject.Address;
+                    person.City = contactObject.City;
+                    person.State = contactObject.State;
 
 
+                    break;
+                }
+            }
 
 
-            return View("Index");
+            context.SaveChanges();
+
+            GetContact(result);
+            result.OrderByDescending(x => x.FirstName);
+            return PartialView("ShowContact", result);
 
         }
 

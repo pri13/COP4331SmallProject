@@ -56,7 +56,7 @@
                               </div>
                               <hr />
                               <div class="text-center">
-                                  <button id="editButton" onclick="EditContactModalClick(@item.ID)" class="btn-outline-primary">
+                                  <button id="editButton" onclick="EditContactModalClick('@item.ID','@item.FirstName','@item.LastName','@item.WorkPhone','@item.CellPhone','@item.Address','@item.City','@item.State')" class="btn-outline-primary">
                                       <span class="fas fa-edit" /> Edit this Contact
                                   </button>
                                   <button id="deleteButton" onclick="DeleteContactModalClick(@item.ID)" class="btn-outline-primary"><i class="fas fa-trash-alt"></i> Delete this Contact</button>

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\_Development\School-Project\School-Project\School-Project\School-Project-master\School-Project-master\School-Project-master\School-Project-master\ContactManager\Repository\Cop4331Entities.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\ysewn\source\repos\COP4331SmallProject\ContactManager\Repository\Cop4331Entities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

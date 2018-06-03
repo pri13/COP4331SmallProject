@@ -127,26 +127,26 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
-    <Compile Include="Repository\Cop4331Entities.Context.cs">
+    <Compile Include="Repository\COPEntites.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cop4331Entities.Context.tt</DependentUpon>
+      <DependentUpon>COPEntites.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Cop4331Entities.cs">
+    <Compile Include="Repository\COPEntites.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cop4331Entities.tt</DependentUpon>
+      <DependentUpon>COPEntites.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Cop4331Entities.Designer.cs">
+    <Compile Include="Repository\COPEntites.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cop4331Entities.edmx</DependentUpon>
+      <DependentUpon>COPEntites.edmx</DependentUpon>
     </Compile>
     <Compile Include="Repository\Person.cs">
-      <DependentUpon>Cop4331Entities.tt</DependentUpon>
+      <DependentUpon>COPEntites.tt</DependentUpon>
     </Compile>
     <Compile Include="Repository\User.cs">
-      <DependentUpon>Cop4331Entities.tt</DependentUpon>
+      <DependentUpon>COPEntites.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\Login.cs" />
   </ItemGroup>
@@ -206,19 +206,17 @@
     <Content Include="Img\UCF-logo.png" />
     <Content Include="Img\WorldMap.png" />
     <Content Include="js\jquery-2.0.0.min.js" />
-    <Content Include="js\jquery.smartWizard.js" />
-    <Content Include="js\jquery.smartWizard.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\modernizr.js" />
-    <Content Include="Repository\Cop4331Entities.Context.tt">
+    <Content Include="Repository\COPEntites.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Cop4331Entities.edmx</DependentUpon>
-      <LastGenOutput>Cop4331Entities.Context.cs</LastGenOutput>
+      <DependentUpon>COPEntites.edmx</DependentUpon>
+      <LastGenOutput>COPEntites.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Repository\Cop4331Entities.tt">
+    <Content Include="Repository\COPEntites.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Cop4331Entities.edmx</DependentUpon>
-      <LastGenOutput>Cop4331Entities.cs</LastGenOutput>
+      <DependentUpon>COPEntites.edmx</DependentUpon>
+      <LastGenOutput>COPEntites.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -251,12 +249,12 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <EntityDeploy Include="Repository\Cop4331Entities.edmx">
+    <EntityDeploy Include="Repository\COPEntites.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Cop4331Entities.Designer.cs</LastGenOutput>
+      <LastGenOutput>COPEntites.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Repository\Cop4331Entities.edmx.diagram">
-      <DependentUpon>Cop4331Entities.edmx</DependentUpon>
+    <Content Include="Repository\COPEntites.edmx.diagram">
+      <DependentUpon>COPEntites.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

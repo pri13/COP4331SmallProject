@@ -35,12 +35,12 @@ namespace ContactManager.Services
             {
                 connection.Open();
 
-                string sql = String.Format("select ID,FirstName,LastName from Users where Login='{0}' and Password='{1}'", username, password);
+                string sql = String.Format("select UserID,FirstName,LastName from Users where Login='{0}' and Password='{1}'", username, password);
                 SqlCommand command = new SqlCommand(sql, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    res.id = Convert.ToInt32(reader["ID"]);
+                    res.id = Convert.ToInt32(reader["UserID"]);
                     res.firstName = Convert.ToString(reader["FirstName"]);
                     res.lastName = Convert.ToString(reader["LastName"]);
                     

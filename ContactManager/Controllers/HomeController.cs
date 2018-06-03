@@ -1,5 +1,4 @@
-﻿
-using ContactManager.Models;
+﻿using ContactManager.Models;
 using ContactManager.Repository;
 using ContactManager.Services;
 using Newtonsoft.Json;
@@ -14,16 +13,16 @@ namespace ContactManager.Controllers
     public class HomeController : Controller
     {
         COP4331Entities context = new COP4331Entities();
+        List<Models.ContactViewModel> result = new List<Models.ContactViewModel>();
         public ActionResult Index()
         {
 
             return View();
 
         }
-        public ActionResult ContactsManager()
+        public ActionResult ContactsManager(string id)
         {
-            var result = new List<Models.ContactViewModel>();
-            GetContact(result);
+            ShowContactList(result,id);
             return View(result.OrderByDescending(x => x.FirstName));
 
         }
@@ -52,12 +51,11 @@ namespace ContactManager.Controllers
             Response.Write(strJson);
             Response.End();
         }
-        public PartialViewResult ShowContact()
+        public PartialViewResult ShowContact( List<Models.ContactViewModel> result)
         {
-            var result = new List<Models.ContactViewModel>();
             try
             {
-                GetContact(result);
+               // ShowContactList(result, id);
             }
             catch (Exception ex)
             {
@@ -66,10 +64,10 @@ namespace ContactManager.Controllers
 
             return PartialView(result.OrderByDescending(x => x.FirstName));
         }
-        public void GetContact(List<Models.ContactViewModel> result)
+        public void ShowContactList(List<Models.ContactViewModel> result, string id)
         {
-
-            var items = context.People.ToList();
+            int contactID = Convert.ToInt32(id);
+            var items = context.People.Where(x=>x.UserID == contactID).ToList();
 
             foreach (var i in items)
             {
@@ -91,36 +89,50 @@ namespace ContactManager.Controllers
                 }
             }
         }
+        
 
-        public ActionResult CreateNewContact(ContactViewModel model)
+        public ActionResult CreateNewContact(string newContact, string id)
         {
             try
             {
-                Person person = new Person();
-                person.FirstName = model.FirstName;
-                person.LastName = model.LastName;
-                person.Birthdate = model.BirthDate;
-                person.CellPhone = model.CellPhone;
-                person.StreetAddress = model.Address;
-                person.City = model.City;
-                person.State = model.State;
-                person.Country = model.Country;
-                person.WorkPhone = model.WorkPhone;
-                person.Email = model.Email;
-                person.DateCreated = DateTime.Now;
-                context.People.Add(person);
-                context.SaveChanges();
+                    ContactViewModel contactObject = Newtonsoft.Json.JsonConvert.DeserializeObject<ContactViewModel>(newContact);
+                    if(contactObject != null && id !=null)
+                    {
+                            Person person = new Person();
+                            person.FirstName = contactObject.FirstName;
+                            person.LastName = contactObject.LastName;
+                            person.Birthdate = contactObject.BirthDate;
+                            person.CellPhone = contactObject.CellPhone;
+                            person.StreetAddress = contactObject.Address;
+                            person.City = contactObject.City;
+                            person.State = contactObject.State;
+                            person.Country = contactObject.Country;
+                            person.WorkPhone = contactObject.WorkPhone;
+                            person.Email = contactObject.Email;
+                            person.DateCreated = DateTime.Now;
+                            person.UserID = Convert.ToInt32(id);
+                            context.People.Add(person);
+                            context.SaveChanges();
+                            ShowContactList(result, id);
+                            result.OrderByDescending(x => x.FirstName);
+                            return PartialView("ShowContact", result);
+                    }
+                    else
+                    {
+                             return PartialView("Error");
+                    }         
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error Occureed {0}", ex.Message);
+                return PartialView("Error");
             }
-            return View("Index");
 
         }
 
-        public ActionResult EditContact(string editContactJson)
+        public ActionResult EditContact(string editContactJson, string userId)
         {
+
             EditContactTest contactObject = Newtonsoft.Json.JsonConvert.DeserializeObject<EditContactTest>(editContactJson);
             int selectedId = contactObject.contactID;
             var result = new List<Models.ContactViewModel>();
@@ -145,21 +157,23 @@ namespace ContactManager.Controllers
                 }
             }
 
-
+            
             context.SaveChanges();
 
-            GetContact(result);
+            ShowContactList(result, userId);
             result.OrderByDescending(x => x.FirstName);
             return PartialView("ShowContact", result);
 
+
+
         }
 
-        public ActionResult DeleteContact(string contactID)
+        public ActionResult DeleteContact(string contactID, string userId)
         {
 
             ContactID contactObject = Newtonsoft.Json.JsonConvert.DeserializeObject<ContactID>(contactID);
             int selectedId = contactObject.contactID;
-            var result = new List<Models.ContactViewModel>();
+          
 
             Person contact = null;
             foreach (var person in context.People)
@@ -175,10 +189,8 @@ namespace ContactManager.Controllers
             context.People.Remove(contact);
             context.SaveChanges();
 
-            GetContact(result);
+            ShowContactList(result, userId);
             result.OrderByDescending(x => x.FirstName);
-
-
             return PartialView("ShowContact", result);
 
         }

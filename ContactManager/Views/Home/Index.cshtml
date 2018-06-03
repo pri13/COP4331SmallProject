@@ -64,7 +64,9 @@
                 modal.style.display = "block";
             }
             else {
-                window.location = 'Home/ContactsManager';
+                localStorage.setItem('UserID', userId);
+                location.href = '@Url.Action("ContactsManager", "Home")?id=' + userId;
+
             }
         }
         catch (err) {

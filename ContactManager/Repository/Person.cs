@@ -27,5 +27,8 @@ namespace ContactManager.Repository
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
+        public Nullable<int> UserID { get; set; }
+    
+        public virtual User User { get; set; }
     }
 }

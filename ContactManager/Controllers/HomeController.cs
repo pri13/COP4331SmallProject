@@ -103,6 +103,7 @@ namespace ContactManager.Controllers
                             person.LastName = contactObject.LastName;
                             person.Birthdate = contactObject.BirthDate;
                             person.CellPhone = contactObject.CellPhone;
+                            person.FAX = contactObject.FaxNumber;
                             person.StreetAddress = contactObject.Address;
                             person.City = contactObject.City;
                             person.State = contactObject.State;
@@ -146,6 +147,7 @@ namespace ContactManager.Controllers
 
                     person.FirstName = contactObject.FirstName;
                     person.LastName = contactObject.LastName;
+                    person.Email = contactObject.Email;
                     person.WorkPhone = contactObject.WorkPhone;
                     person.CellPhone = contactObject.CellPhone;
                     person.StreetAddress = contactObject.Address;

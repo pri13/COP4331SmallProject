@@ -13,6 +13,7 @@ namespace ContactManager.Models
         public string LastName { get; set; }
         public string WorkPhone { get; set; }
         public string CellPhone { get; set; }
+        public string FaxNumber { get; set; }
         public string Email { get; set; }
         public string Sex { get; set; }
         public Nullable<System.DateTime> BirthDate { get; set; }
@@ -38,6 +39,7 @@ namespace ContactManager.Models
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Email { get; set; }
         public string WorkPhone { get; set; }
         public string CellPhone { get; set; }
         public string Address { get; set; }

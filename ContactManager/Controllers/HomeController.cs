@@ -4,6 +4,7 @@ using ContactManager.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
@@ -12,7 +13,7 @@ namespace ContactManager.Controllers
 {
     public class HomeController : Controller
     {
-        COP4331Entities context = new COP4331Entities();
+        COP4331Entities6 context = new COP4331Entities6();
         List<Models.ContactViewModel> result = new List<Models.ContactViewModel>();
         public ActionResult Index()
         {
@@ -44,6 +45,31 @@ namespace ContactManager.Controllers
             SendResultInfoAsJson(response);
 
         }
+
+        public ActionResult NewUser(string jsonString)
+        {
+
+            NewUserTest userObject = Newtonsoft.Json.JsonConvert.DeserializeObject<NewUserTest>(jsonString);
+
+            User newUser = new User {
+                FirstName = userObject.FirstName,
+                LastName = userObject.LastName,
+                Login = userObject.UserName,
+                Password = userObject.Password,
+                DateCreated = DateTime.Now,
+                DateLastLoggedIn = DateTime.Now
+            };
+
+            context.Users.Add(newUser);
+            context.SaveChanges();
+
+
+
+
+            return null;
+        }
+
+
         void SendResultInfoAsJson(LoginResponse res)
         {
             string strJson = JsonConvert.SerializeObject(res);

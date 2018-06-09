@@ -35,8 +35,8 @@
                     <h3 class="">User Name</h3>
                     <input type="text" id="NewUserName" name="NewUserName" class="form-control" placeholder="New User Name" required="">
                     <h3 class="">Password</h3>
-                    <input type="password" id="NewUserName" name="newPassword" class="form-control" placeholder="newPassword" required="">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Login()">
+                    <input type="password" id="newPassword" name="newPassword" class="form-control" placeholder="newPassword" required="">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="CreateNewUser()">
                         Create Account
                     </button>
                 </form>
@@ -57,6 +57,52 @@
     span.onclick = function () {
         modal.style.display = "none";
     }
+
+
+
+    function CreateNewUser() {
+
+        var callbackUrl = '/Home/NewUser';
+
+        var CreateNewUserTemplate = {
+
+            FirstName: $("#FirstName").val(),
+            LastName: $("#LastName").val(),
+            Username: $("#NewUserName").val(),
+            Password: $("#newPassword").val(),
+        }
+
+        $.ajax({
+            url: callbackUrl,
+            type: "post",
+            data: { jsonString: JSON.stringify(CreateNewUserTemplate)},
+            dataType: "html",
+            async: false,
+            success: function () {
+
+                alert("new login created");
+                //
+                // clear values
+                //
+                $("#FirstName").val("");
+                $("#LastName").val("");
+                $("#NewUserName").val("");
+                $("#newPassword").val("");
+
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+
+
+
+
+    }
+
+
+
 
     function Login() {
         userId = 0;
